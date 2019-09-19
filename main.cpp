@@ -17,30 +17,19 @@
 using namespace std;
 
 int main() {
-    int t;
+    int t; //defiicion de # casos
     cin >> t;
     while(t--){
-    int size; // definicion del tamanio
-    cin >> size;
-    vector<int> Array(size);
-    for (int i=0;i<size;i++){  //llenado de vector
-        cin >> Array[i];
-        while(Array[i]<0 || Array[i]>109){
-            cout<<"!!!"<<endl;
+        int size; // definicion del tamanio de arreglo
+        cin >> size;
+        vector<int> Array(size);
+        for (int i=0;i<size;i++){  //llenado de vector
             cin >> Array[i];
         }
-    }
-    sort(Array.begin(),Array.end()); //ordenado de menor a mayor
-    int current=2;
-    for (int i=0;i<size;i++)
-    {
-        if (Array[i]>=current)
-        {
-            current+=2;
-        }
-    }
-    cout << current << endl;
-    
+        sort(Array.begin(),Array.end()); //ordenado de menor a mayor
+        int current=2;
+        for (int i=0;i<size;i++) if (Array[i]>=current) current+=2;
+        cout << current << endl;
     }
     return 0;
 }
