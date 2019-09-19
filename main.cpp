@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   main.cpp
+ * Author: alexi
+ *
+ * Created on 18 de septiembre de 2019, 8:21 p.m.
+ */
+
+#include <iostream> 
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int size;
+    cin >> size;
+    vector<int> Array(size);
+    for (int i=0;i<size;i++)
+        cin >> Array[i];
+			
+    sort(Array.begin(),Array.end());
+    int current=2;
+    for (int i=0;i<size;i++)
+    {
+        if (Array[i]>=current)
+        {
+            current+=2;
+        }
+    }
+    cout << current << endl;
+    return 0;
+}
+
