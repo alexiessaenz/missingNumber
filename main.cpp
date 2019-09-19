@@ -17,13 +17,20 @@
 using namespace std;
 
 int main() {
-    int size;
+    int t;
+    cin >> t;
+    while(t--){
+    int size; // definicion del tamanio
     cin >> size;
     vector<int> Array(size);
-    for (int i=0;i<size;i++)
+    for (int i=0;i<size;i++){  //llenado de vector
         cin >> Array[i];
-			
-    sort(Array.begin(),Array.end());
+        while(Array[i]<0 || Array[i]>109){
+            cout<<"!!!"<<endl;
+            cin >> Array[i];
+        }
+    }
+    sort(Array.begin(),Array.end()); //ordenado de menor a mayor
     int current=2;
     for (int i=0;i<size;i++)
     {
@@ -33,6 +40,8 @@ int main() {
         }
     }
     cout << current << endl;
+    
+    }
     return 0;
 }
 
